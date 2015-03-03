@@ -12,6 +12,6 @@ function fuzzysearch (query, text, cs) {
     var t = li < i;
     return (li = i, t);
   });
-};
+}
 
 module.exports = fuzzysearch;
