@@ -5,6 +5,15 @@ function fuzzysearch (query, text) {
   var character;
   var currentIndex;
   var lastIndex = -1;
+  if (query.length > text.length) {
+    return false;
+  }
+  if (query === text) {
+    return true;
+  }
+  if (text.indexOf(query) > lastIndex) {
+    return true;
+  }
   for (i = 0; i < query.length; i++) {
     character = query[i];
     currentIndex = text.indexOf(character, lastIndex + 1);
