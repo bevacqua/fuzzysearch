@@ -1,19 +1,17 @@
 'use strict';
 
-function fuzzysearch (query, text) {
-  var i;
-  var character;
-  var currentIndex;
-  var lastIndex = -1;
-  for (i = 0; i < query.length; i++) {
-    character = query[i];
-    currentIndex = text.indexOf(character, lastIndex + 1);
-    if (currentIndex === -1) {
-      return false;
-    }
-    lastIndex = currentIndex;
+function fuzzysearch (query, text, cs) {
+  var li = -1;
+  query = cs ? query : query.toLowerCase();
+  text = cs ? text : text.toLowerCase();
+  if (text.indexOf(query) > li) {
+    return true;
   }
-  return true;
+  return query.split('').every(function (char) {
+    var i = text.indexOf(char, li + 1);
+    var t = li < i;
+    return (li = i, t);
+  });
 }
 
 module.exports = fuzzysearch;

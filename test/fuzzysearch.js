@@ -10,5 +10,7 @@ test('fuzzysearch should match expectations', function (t) {
   t.equal(fuzzysearch('cartwheel', 'cartwheel'), true);
   t.equal(fuzzysearch('cwheeel', 'cartwheel'), false);
   t.equal(fuzzysearch('lw', 'cartwheel'), false);
+  t.equal(fuzzysearch('cart', 'Cartwheel'), true);
+  t.equal(fuzzysearch('cart', 'Cartwheel', true), false);
   t.end();
 });
