@@ -1,0 +1,23 @@
+{
+  "name": "fuzzysearch",
+  "description": "Fuzzy search in JavaScript",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bevacqua/fuzzysearch",
+  "author": {
+    "name": "Nicolas Bevacqua",
+    "email": "ng@bevacqua.io",
+    "url": "http://bevacqua.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bevacqua/fuzzysearch.git"
+  },
+  "scripts": {
+    "test": "jshint . && tape test/*.js"
+  },
+  "devDependencies": {
+    "jshint": "^2.6.0",
+    "tape": "^3.5.0"
+  }
+}
