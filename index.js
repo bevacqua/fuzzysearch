@@ -1,30 +1,18 @@
 'use strict';
-
-function fuzzysearch (query, text) {
-  var i;
-  var character;
-  var currentIndex;
-  var lastIndex = -1;
-  var tlen = text.length;
-  var qlen = query.length;
-  if (qlen > tlen) {
-    return false;
+var escapeRegExp = function(str) {
+  return str.replace(/[{}()*+?.^$|[\]]/g, '\\$&');
+};
+var toReg = function(query) {
+  var x = String(query).split('').map(function(c) {
+    return escapeRegExp(c);
+  }).join('.*?');
+  x = '(?:' + x + ')';
+  return new RegExp(x);
+};
+var fuzzysearch = function(query, text) {
+  if (typeof query === 'string' && typeof text === 'string' && query.length && text.length) {
+    return toReg(query).test(text);
   }
-  if (qlen === tlen && query === text) {
-    return true;
-  }
-  if (text.indexOf(query) > lastIndex) {
-    return true;
-  }
-  for (i = 0; i < qlen; i++) {
-    character = query[i];
-    currentIndex = text.indexOf(character, lastIndex + 1);
-    if (currentIndex === -1) {
-      return false;
-    }
-    lastIndex = currentIndex;
-  }
-  return true;
-}
-
+  return false;
+};
 module.exports = fuzzysearch;
