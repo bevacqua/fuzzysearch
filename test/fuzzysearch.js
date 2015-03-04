@@ -1,7 +1,7 @@
 'use strict';
 
-var test = require('tape');
-var fuzzysearch = require('..');
+var test = require('tape')
+  , fuzzysearch = require('..');
 
 test('fuzzysearch should match expectations', function (t) {
   t.equal(fuzzysearch('car', 'cartwheel'), true);
