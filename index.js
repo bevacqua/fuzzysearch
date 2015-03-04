@@ -5,16 +5,18 @@ function fuzzysearch (query, text) {
   var character;
   var currentIndex;
   var lastIndex = -1;
-  if (query.length > text.length) {
+  var tlen = text.length;
+  var qlen = query.length;
+  if (qlen > tlen) {
     return false;
   }
-  if (query === text) {
+  if (qlen === tlen && query === text) {
     return true;
   }
   if (text.indexOf(query) > lastIndex) {
     return true;
   }
-  for (i = 0; i < query.length; i++) {
+  for (i = 0; i < qlen; i++) {
     character = query[i];
     currentIndex = text.indexOf(character, lastIndex + 1);
     if (currentIndex === -1) {
