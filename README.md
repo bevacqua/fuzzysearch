@@ -1,6 +1,6 @@
 # fuzzysearch
 
-> Fuzzy search in JavaScript
+> Tiny and blazing-fast fuzzy search in JavaScript
 
 Fuzzy searching allows for flexibly matching a string with partial input, useful for filtering data very quickly based on lightweight user input.
 

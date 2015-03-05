@@ -1,6 +1,6 @@
 {
   "name": "fuzzysearch",
-  "description": "Fuzzy search in JavaScript",
+  "description": "Tiny and blazing-fast fuzzy search in JavaScript",
   "version": "1.0.2",
   "homepage": "https://github.com/bevacqua/fuzzysearch",
   "author": {
