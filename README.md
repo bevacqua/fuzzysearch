@@ -30,6 +30,12 @@ fuzzysearch('eeel', 'cartwheel') // <- false
 fuzzysearch('dog', 'cartwheel') // <- false
 ```
 
+# But! _`RegExp`s...!_
+
+![chart showing abysmal performance for regexp-based implementation][1]
+
 # License
 
 MIT
+
+[1]: https://cloud.githubusercontent.com/assets/934293/6495796/106a61a6-c2ac-11e4-945d-3d1bb066a76e.png
