@@ -1,10 +1,6 @@
 'use strict';
 
 function fuzzysearch (query, text) {
-  var i;
-  var character;
-  var currentIndex;
-  var lastIndex = -1;
   var tlen = text.length;
   var qlen = query.length;
   if (qlen > tlen) {
@@ -13,16 +9,14 @@ function fuzzysearch (query, text) {
   if (qlen === tlen && query === text) {
     return true;
   }
-  if (text.indexOf(query) > lastIndex) {
-    return true;
-  }
-  for (i = 0; i < qlen; i++) {
-    character = query[i];
-    currentIndex = text.indexOf(character, lastIndex + 1);
-    if (currentIndex === -1) {
-      return false;
+  outer: for (var i = 0, j = 0; i < qlen; i++) {
+    var qch = query.charCodeAt(i);
+    while (j < tlen) {
+      if (text.charCodeAt(j++) === qch) {
+        continue outer;
+      }
     }
-    lastIndex = currentIndex;
+    return false;
   }
   return true;
 }

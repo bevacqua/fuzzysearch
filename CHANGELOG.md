@@ -1,3 +1,8 @@
+# v1.0.2 Vodka Tonic
+
+- Slightly updated circuit-breaker that tests for equal length first
+- Doubled method performance
+
 # v1.0.1 Circuit Breaker
 
 - Introduced a circuit-breaker where queries longer than the searched string will return `false`
