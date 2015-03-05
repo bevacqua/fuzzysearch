@@ -4,6 +4,10 @@
 
 Fuzzy searching allows for flexibly matching a string with partial input, useful for filtering data very quickly based on lightweight user input.
 
+# Demo
+
+To see `fuzzysearch` in action, head over to [bevacqua.github.io/horsey](http://bevacqua.github.io/horsey), which is a demo of an autocomplete component that uses `fuzzysearch` to filter out results based on user input.
+
 # Install
 
 From `npm`
