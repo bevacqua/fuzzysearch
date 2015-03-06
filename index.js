@@ -6,8 +6,8 @@ function fuzzysearch (query, text) {
   if (qlen > tlen) {
     return false;
   }
-  if (qlen === tlen && query === text) {
-    return true;
+  if (qlen === tlen) {
+    return query === text;
   }
   outer: for (var i = 0, j = 0; i < qlen; i++) {
     var qch = query.charCodeAt(i);
