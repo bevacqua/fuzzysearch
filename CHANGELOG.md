@@ -1,3 +1,7 @@
+# v1.0.3 Short Fuse
+
+- Improved circuit-breaker when `needle` and `haystack` length are equal
+
 # v1.0.2 Vodka Tonic
 
 - Slightly updated circuit-breaker that tests for equal length first

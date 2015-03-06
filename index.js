@@ -1,18 +1,18 @@
 'use strict';
 
-function fuzzysearch (query, text) {
-  var tlen = text.length;
-  var qlen = query.length;
+function fuzzysearch (needle, haystack) {
+  var tlen = haystack.length;
+  var qlen = needle.length;
   if (qlen > tlen) {
     return false;
   }
   if (qlen === tlen) {
-    return query === text;
+    return needle === haystack;
   }
   outer: for (var i = 0, j = 0; i < qlen; i++) {
-    var qch = query.charCodeAt(i);
+    var nch = needle.charCodeAt(i);
     while (j < tlen) {
-      if (text.charCodeAt(j++) === qch) {
+      if (haystack.charCodeAt(j++) === nch) {
         continue outer;
       }
     }
