@@ -36,6 +36,8 @@ An exciting application for this kind of algorithm is to filter options from an 
 
 ![chart showing abysmal performance for regexp-based implementation][1]
 
+<sub>The current implementation is twice as fast as the _"original"_ algorithm depicted above.</sub>
+
 # License
 
 MIT
