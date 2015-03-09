@@ -34,14 +34,15 @@ An exciting application for this kind of algorithm is to filter options from an 
 
 # But! _`RegExp`s...!_
 
-![chart showing abysmal performance for regexp-based implementation][1]
+[![chart showing abysmal performance for regexp-based implementation][1]][4]
 
-<sub>The current implementation is twice as fast as the _"original"_ algorithm depicted above.</sub>
+<sub>The current implementation uses the algorithm suggested by Mr. Aleph, a crazy russian compiler engineer working at V8.</sub>
 
 # License
 
 MIT
 
-[1]: https://cloud.githubusercontent.com/assets/934293/6495796/106a61a6-c2ac-11e4-945d-3d1bb066a76e.png
+[1]: https://cloud.githubusercontent.com/assets/934293/6550014/d3a86174-c5fc-11e4-8334-b2e2b0d38fad.png
 [2]: http://en.wikipedia.org/wiki/Levenshtein_distance
 [3]: http://bevacqua.github.io/horsey
+[4]: http://jsperf.com/fuzzysearch-regex/14
