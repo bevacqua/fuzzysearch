@@ -4,6 +4,7 @@ var test = require('tape');
 var fuzzysearch = require('..');
 
 test('fuzzysearch should match expectations', function (t) {
+  t.equal(fuzzysearch('', 'cartwheel'), true);
   t.equal(fuzzysearch('car', 'cartwheel'), true);
   t.equal(fuzzysearch('cwhl', 'cartwheel'), true);
   t.equal(fuzzysearch('cwheel', 'cartwheel'), true);
