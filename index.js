@@ -3,6 +3,9 @@
 function fuzzysearch (needle, haystack) {
   var hlen = haystack.length;
   var nlen = needle.length;
+  if(nlen === 0) {
+    return true;
+  }
   if (nlen > hlen) {
     return false;
   }
