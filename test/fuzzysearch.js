@@ -22,5 +22,10 @@ test('fuzzysearch should match expectations', function (t) {
   t.equal(fuzzysearch('学习正则', '正则表达式怎么学习'), false);
   // end chinese unicode testcase
 
+  // options
+  t.equal(fuzzysearch('car', 'Cartwheel'), false);
+  t.equal(fuzzysearch('car', 'Cartwheel', { caseInsensitive: true }), true);
+  // end options
+
   t.end();
 });

@@ -32,6 +32,12 @@ fuzzysearch('dog', 'cartwheel') // <- false
 
 An exciting application for this kind of algorithm is to filter options from an autocomplete menu, check out [horsey][3] for an example on how that might look like.
 
+## Options
+
+| Property | Description | Default |
+| - | - | - |
+| caseInsensitive | Does a case insensitive match | false |
+
 # But! _`RegExp`s...!_
 
 [![chart showing abysmal performance for regexp-based implementation][1]][4]

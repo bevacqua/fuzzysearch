@@ -1,11 +1,17 @@
 'use strict';
 
-function fuzzysearch (needle, haystack) {
+function fuzzysearch (needle, haystack, opts) {
   var hlen = haystack.length;
   var nlen = needle.length;
   if (nlen > hlen) {
     return false;
   }
+
+  if (opts && opts.caseInsensitive) {
+    needle = needle.toLowerCase();
+    haystack = haystack.toLowerCase();
+  }
+
   if (nlen === hlen) {
     return needle === haystack;
   }
