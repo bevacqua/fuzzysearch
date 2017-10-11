@@ -1,23 +1,22 @@
 'use strict';
 
-function fuzzysearch (needle, haystack) {
+function fuzzysearch (needle, haystack, opts) {
   var hlen = haystack.length;
   var nlen = needle.length;
-  if (nlen > hlen) {
-    return false;
+
+  if (nlen > hlen) { return false; }
+
+  if (opts && opts.caseInsensitive) {
+    needle = needle.toLowerCase();
+    haystack = haystack.toLowerCase();
   }
-  if (nlen === hlen) {
-    return needle === haystack;
+
+  var nIdx = 0, hIdx = 0;
+  while (nIdx < nlen) {
+    if (hIdx >= hlen) { return false; }
+    if (needle.charCodeAt(nIdx) === haystack.charCodeAt(hIdx++)) { nIdx++; }
   }
-  outer: for (var i = 0, j = 0; i < nlen; i++) {
-    var nch = needle.charCodeAt(i);
-    while (j < hlen) {
-      if (haystack.charCodeAt(j++) === nch) {
-        continue outer;
-      }
-    }
-    return false;
-  }
+
   return true;
 }
 
