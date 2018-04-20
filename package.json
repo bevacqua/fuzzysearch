@@ -8,6 +8,7 @@
     "email": "ng@bevacqua.io",
     "url": "http://bevacqua.io"
   },
+  "typings": "./index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
