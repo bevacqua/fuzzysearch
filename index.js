@@ -7,7 +7,7 @@ function fuzzysearch (needle, haystack) {
     return false;
   }
   if (nlen === hlen) {
-    return needle === haystack;
+    return haystack.startsWith(needle);
   }
   outer: for (var i = 0, j = 0; i < nlen; i++) {
     var nch = needle.charCodeAt(i);
